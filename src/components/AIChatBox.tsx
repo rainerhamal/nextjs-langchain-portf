@@ -21,7 +21,8 @@ export default function AIChatBox ( { open, onClose }: AIChatBoxProps )
     setMessages,
     isLoading,
     error
-  } = useChat( {
+  } = useChat(
+    {/*{
     initialMessages: [
       {
         id: "1",
@@ -45,11 +46,12 @@ export default function AIChatBox ( { open, onClose }: AIChatBoxProps )
           `
       },
     ]
-  } ); // /api/chat
+  }*/} ); // /api/chat
 
   const inputRef = useRef<HTMLInputElement>( null );
   const scrollRef = useRef<HTMLDivElement>( null );
 
+  // hook to scroll down right away whenever a new message is received
   useEffect( () =>
   {
     if ( scrollRef.current )
@@ -58,6 +60,7 @@ export default function AIChatBox ( { open, onClose }: AIChatBoxProps )
     }
   }, [ messages ] );
 
+  // hook to put the chatinput in focus every time chatbox is opened
   useEffect( () =>
   {
     if ( open )
@@ -84,18 +87,78 @@ export default function AIChatBox ( { open, onClose }: AIChatBoxProps )
       <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl">
 
         {/*div which will contain the chat message*/ }
-        <div className="mt-3 h-full overflow-y-auto px-3">
+        <div className="mt-3 h-full overflow-y-auto px-3" ref={ scrollRef }>
+
+          {/*to map out the messages between ai and user*/ }
           { messages.map( message => (
             <ChatMessage message={ message } key={ message.id } />
           ) ) }
+
+          {/*text to show when there's no message from the user and chatbot*/ }
+          { !error && messages.length === 0 && (
+            <div className="mx-8 flex h-full flex-col items-center justify-center gap-3 text-center">
+              <Bot size={ 28 } />
+              <p className="text-lg font-medium">
+                Send a message to start the AI chat!
+              </p>
+            </div>
+          ) }
+
+          {/*handle when chatbot is loading but hasn't started streaming*/ }
+          { isLoading && lastMessageIsUser && (
+            <ChatMessage
+              message={ {
+                id: "loading",
+                role: "assistant",
+                content: "Thinking...",
+              } } />
+          ) }
+
+          {/*Error handling*/ }
+          { error && (
+            <ChatMessage
+              message={ {
+                id: "error",
+                role: "assistant",
+                content: "Something went wrong. Please try again!",
+              } } />
+          ) }
         </div>
 
         {/*text message input field div*/ }
-        <div>
+        <form onSubmit={ handleSubmit } className="m-3 flex gap-1">
 
-        </div>
+          {/* clear chat button */}
+          <button
+            type="button"
+            className="flex w-10 flex-none items-center justify-center"
+            title="Clear chat"
+            onClick={ () => setMessages( [] ) }
+          >
+            <Trash size={ 24 } />
+          </button>
+
+          {/* input message filed */}
+          <input
+            value={ input }
+            onChange={ handleInputChange }
+            placeholder="Say something..."
+            className="grow rounded border bg-background px-3 py-2"
+            ref={ inputRef }
+          />
+
+          {/* submit button */}
+          <button
+            type="submit"
+            className="flex w-10 flex-none items-center justify-center disabled:opacity-50"
+            disabled={ input.length === 0 }
+            title="Submit message"
+          >
+            <SendHorizontal size={ 24 } />
+          </button>
+
+        </form>
       </div>
-
     </div>
   );
 }
