@@ -38,7 +38,8 @@ export async function POST(req: Request) {
     const chatModel = new ChatOpenAI({
       modelName: "gpt-3.5-turbo-0125",
       streaming: true,
-      callbacks: [handlers]
+      callbacks: [handlers],
+      
     })
 
 
