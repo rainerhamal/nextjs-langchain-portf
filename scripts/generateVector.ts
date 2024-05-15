@@ -7,9 +7,13 @@ import { TextLoader } from "langchain/document_loaders/fs/text";
 import { DocumentInterface } from "@langchain/core/documents";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { getEmbeddingsCollection, getVectorStore } from "../src/lib/astradb";
+import { Redis } from "@upstash/redis";
 
 async function generateEmbeddings ()
 {
+    //Clear cache whenever we generate a new vector embedding to keep the information up-to-date
+    await Redis.fromEnv().flushdb();
+
     //To store docs in the astradb vector database
     const vectorStore = await getVectorStore();
 

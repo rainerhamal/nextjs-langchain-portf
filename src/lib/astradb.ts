@@ -10,9 +10,8 @@ import { DataAPIClient } from '@datastax/astra-db-ts';
 const endpoint = process.env.ASTRA_DB_ENDPOINT || "";
 const token = process.env.ASTRA_DB_APPLICATION_TOKEN || "";
 const collection = process.env.ASTRA_DB_COLLECTION || "";
-const namespace = "myNextjsPortfolio" || "";
+// const namespace = process.env.ASTRA_DB_NAMESPACE || "";
 
-// console.log(namespace);
 
 // throw an error if the values above are empty
 if (!token || !endpoint || !collection) {
@@ -41,6 +40,8 @@ export async function getVectorStore() {
 // function use to access database and use to delete all the collection embeddings
 export async function getEmbeddingsCollection() {
     const client = new DataAPIClient(token);
-    const db = client.db(endpoint, namespace );
+    const db = client.db(endpoint);
+    //console.log(namespace);
+   //console.log(collection);
     return db.collection(collection);
 }

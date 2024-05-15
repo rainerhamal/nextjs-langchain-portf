@@ -1,4 +1,3 @@
-import bjj from "@/assets/bjj.jpg";
 import { H1 } from "@/components/ui/H1";
 import { H2 } from "@/components/ui/H2";
 import { Metadata } from "next";
@@ -90,7 +89,7 @@ export default function Page() {
           psychology.
         </p>
         <Image
-          src={bjj}
+          src={""}
           alt="Brazilian Jiu-Jitsu group photo"
           className="rounded-md"
         />
