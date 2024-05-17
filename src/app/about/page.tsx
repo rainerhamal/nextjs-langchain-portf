@@ -16,9 +16,10 @@ export default function Page() {
       <section className="space-y-3">
         <H2>Who am I?</H2>
         <p>
-          My name is Florian Walther and I am a self-taught software developer
-          from Germany. I started programming in 2017, at the age of 26, and
-          since then I have created hundreds of tutorials on my YouTube channel{" "}
+          My name is W Rainer Flores and I am a self-taught software developer. 
+          I am a Civil Engineering Graduate with a passion for Machine Learning, data science and database engineering. Through completing several online courses and acquiring certificates in Data Science Methodology, Tools for Data Science, Python for Data Science, AI & Development, What is Data Science?, and Databases and SQL for Data Science with Python from the IBM Skills Network, I have developed a strong foundation in data science, programming, and database management.
+
+          As a Civil Engineering graduate, I possess strong analytical and problem-solving skills, attention to detail, and project management experience. I am highly motivated to continue learning and expanding my knowledge in the field of database engineering.{" "}
           <a
             href="https://www.youtube.com/codinginflow"
             className="text-primary hover:underline"
