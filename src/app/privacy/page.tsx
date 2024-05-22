@@ -79,11 +79,11 @@ export default function Page() {
           page. We reserve the right to update or change our Privacy Policy at
           any time, and you should check this Privacy Policy periodically.
         </p>
-        <H2>Contact Us</H2>
+        {/* <H2>Contact Us</H2>
         <p>
           If you have any questions about this Privacy Policy, please contact us
           at info@codinginflow.com.
-        </p>
+        </p> */}
       </div>
     </section>
   );

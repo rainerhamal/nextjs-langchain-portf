@@ -20,36 +20,36 @@ export default function Page() {
           I am a Civil Engineering Graduate with a passion for Machine Learning, data science and database engineering. Through completing several online courses and acquiring certificates in Data Science Methodology, Tools for Data Science, Python for Data Science, AI & Development, What is Data Science?, and Databases and SQL for Data Science with Python from the IBM Skills Network, I have developed a strong foundation in data science, programming, and database management.
 
           As a Civil Engineering graduate, I possess strong analytical and problem-solving skills, attention to detail, and project management experience. I am highly motivated to continue learning and expanding my knowledge in the field of database engineering.{" "}
-          <a
+          {/* <a
             href="https://www.youtube.com/codinginflow"
             className="text-primary hover:underline"
           >
             Coding in Flow
           </a>
-          .
+          . */}
         </p>
         <p>
-          I&apos;m passionate about building cool apps and websites and I love
-          sharing the things I learn with my audience.
+          {/* I&apos;m passionate about building cool apps and websites and I love
+          sharing the things I learn with my audience. */}
         </p>
       </section>
       <hr className="border-muted" />
       <section className="space-y-3">
-        <H2>Skills</H2>
+        {/* <H2>Skills</H2> */}
         <p>
-          I&apos;m a full-stack web developer specializing in{" "}
+          {/* I&apos;m a full-stack web developer specializing in{" "}
           <strong>React</strong>, <strong>Next.js</strong>, and{" "}
-          <strong>Node.js</strong>.
+          <strong>Node.js</strong>. */}
         </p>
         <p>
-          I also have experience with Android development but have stopped
+          {/* I also have experience with Android development but have stopped
           working with it a few years ago. I prefer web development because you
           can use a modern website on almost every device and reach the whole
-          world with it.
+          world with it. */}
         </p>
       </section>
       <hr className="border-muted" />
-      <section className="space-y-3">
+      {/* <section className="space-y-3">
         <H2>Side projects</H2>
         <p>
           In my free time, I like to work on side projects to keep my skill
@@ -94,7 +94,7 @@ export default function Page() {
           alt="Brazilian Jiu-Jitsu group photo"
           className="rounded-md"
         />
-      </section>
+      </section> */}
     </section>
   );
 }
