@@ -21,32 +21,7 @@ export default function AIChatBox ( { open, onClose }: AIChatBoxProps )
     setMessages,
     isLoading,
     error
-  } = useChat(
-    {/*{
-    initialMessages: [
-      {
-        id: "1",
-        role: "assistant",
-        content: "Hi, I'm the chatbot!"
-      },
-      {
-        id: "2",
-        role: "user",
-        content: "Hi, I'm the user!"
-      },
-      {
-        id: "3",
-        role: "assistant",
-        content: `
-  [NextJS Tutorial](https://nextjs.org/learn/dashboard-app/next-steps)
-          List:
-  - Item1
-  - Item2
-  - Item3
-          `
-      },
-    ]
-  }*/} ); // /api/chat
+  } = useChat({api: "http://127.0.0.1:8000/api/chat"}); // /api/chat
 
   const inputRef = useRef<HTMLInputElement>( null );
   const scrollRef = useRef<HTMLDivElement>( null );

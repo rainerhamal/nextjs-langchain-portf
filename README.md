@@ -1,24 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js LangChain Portfolio
+
+This is a portfolio web application built with Next.js, TypeScript, Tailwind CSS, and LangChain. It showcases AI-powered chat features and personal information, designed for modern web standards and scalability.
+
+## Features
+- AI ChatBox powered by LangChain
+- Responsive design with Tailwind CSS
+- Modular component structure
+- AstraDB integration
+- Pages: About, Skills, Privacy
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-```bash
+### Installation
+1. Clone the repository:
+   ```sh
+git clone https://github.com/rainerhamal/nextjs-langchain-portf.git
+cd nextjs-langchain-portf
+```
+2. Install dependencies:
+   ```sh
+npm install
+# or
+yarn install
+```
+
+### Running the Development Server
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
+
+### Building for Production
+```sh
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
+- `src/app/` - Main application pages and layout
+- `src/components/` - Reusable UI components
+- `src/lib/` - Utility libraries and database integration
+- `public/` - Static assets
+- `scripts/` - Utility scripts (e.g., vector generation)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
+- Update content in `src/app/about/page.tsx`, `src/app/skills/page.tsx`, etc.
+- Modify chat logic in `src/components/AIChatBox.tsx` and backend in `src/app/api/chat/route.ts`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## License
+This project is licensed under the MIT License.
+
+## Author
+Rainer Hamal
+
+---
 
 ## Learn More
 
